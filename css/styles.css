@@ -76,11 +76,84 @@ body {
 }
 
 /**-----------------------------HEADER-----------------------------------  */
+
+.page-header.container {
+  position: relative;
+}
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.menu-container {
+  opacity: 1;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -25%);
+  width: 428px;
+  height: 796px;
+  background-color: var(--white-color);
+  padding: 80px 35px 40px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-header {
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
+
+.menu-button {
+  background-color: var(--white-color);
+  border-color: transparent;
+}
+
+.icon-burger {
+  stroke: var(--secondary-color);
+}
+.nav .list .link,
+.address .link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color var(--transition-duration) var(--transition-timing-function);
+}
+
+.address .link {
+  font-style: normal;
+  letter-spacing: 0.02em;
+  color: var(--primary-color);
+}
+
+.address .link.tel {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  text-transform: capitalize;
+}
+
+.address .link.mailto {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.nav .link:hover,
+.nav .link:focus,
+.address .link:hover,
+.address .link:focus {
+  color: var(--active-color);
+}
+
 /* Hero section */
 
 .section.hero {
@@ -373,7 +446,7 @@ body {
 }
 
 .form-subscribe {
-  width: 398px;
+  max-width: 398px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -387,10 +460,13 @@ body {
   color: var(--white-color);
   margin-bottom: 16px;
 }
-
+.form-subscribe-label {
+  width: 100%;
+}
 .form-subscribe-input {
   height: 40px;
-  max-width: 398px;
+  width: 100%;
+  /* max-width: 398px; */
   padding-left: 16px;
   border: 1px solid #ffffff;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -431,10 +507,6 @@ body {
 
 /**---------------------------- Modal--------------------------- */
 
-.page-header.container {
-  position: relative;
-}
-
 .backdrop {
   position: fixed;
   top: 0;
@@ -442,7 +514,8 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
-
+  padding: 96px 18px;
+  overflow-y: scroll;
   opacity: 1;
   visibility: visible;
   transition: opacity var(--transition-duration)
@@ -456,24 +529,25 @@ body {
   visibility: hidden;
 }
 
-.backdrop.is-hidden .modal {
+/* .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.5);
-}
+} */
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 392px;
-  min-height: 576px;
+  position: relative;
+  /* top: 50%;
+  left: 50%; */
+  max-width: 392px;
+  /* width: 100%; */
+  height: 576px;
   padding: 72px 24px 24px 24px;
   background-color: var(--modal-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transform: translate(-50%, -50%) scale(1);
+  /* transform: translate(-50%, -50%) scale(1);
   transition: transform var(--transition-duration)
-    var(--transition-timing-function);
+    var(--transition-timing-function); */
 }
 
 .button-modal {
@@ -703,16 +777,65 @@ body {
   background-color: var(--active-color);
 }
 
+/**-----------------------MOBILE----------------------------------  */
+/**-----------------------------------------------------------------*/
+
+@media screen and (max-width: 767px) {
+  .menu-container .social-list {
+    width: 100%;
+    display: flex;
+    gap: 56px;
+  }
+
+  .menu-container.is-open {
+    opacity: 1;
+  }
+  .nav .list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .nav {
+    margin-bottom: 284px;
+  }
+  .address {
+    margin-bottom: 48px;
+    width: 100%;
+  }
+  .address .list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
 /**-----------------------TABLET--------------------------------- */
+/**---------------------------------------------------------------- */
 
 @media screen and (min-width: 768px) {
   .container {
     max-width: 766px;
   }
+  /*-----------------------------MODAL---------------------------------  */
+
+  .backdrop {
+    padding: 0;
+  }
+
+  .backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
 
   .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 408px;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform var(--transition-duration)
+      var(--transition-timing-function);
   }
+
   /**-------------------------------------PAGE_HEADER-------------------  */
   .page-header .container {
     display: flex;
@@ -728,27 +851,7 @@ body {
     gap: 40px;
     margin-left: 120px;
   }
-  .nav .list .link,
-  .address .link {
-    display: block;
-    padding-top: 24px;
-    padding-bottom: 24px;
-    color: var(--secondary-color);
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    text-decoration: none;
-    text-align: center;
-    transition: color var(--transition-duration)
-      var(--transition-timing-function);
-  }
 
-  .nav .link:hover,
-  .nav .link:focus,
-  .address .link:hover,
-  .address .link:focus {
-    color: var(--active-color);
-  }
   .nav .link {
     position: relative;
   }
@@ -767,20 +870,17 @@ body {
     background-color: var(--active-color);
     border-radius: 2px;
   }
-  .address .link {
-    font-weight: 400;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.04em;
-    color: var(--primary-color);
-    padding: 0;
-  }
+
   .address .list {
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 16px 0;
+  }
+
+  .menu-container .social-list,
+  .menu-toggle {
+    display: none;
   }
   /**----------------------------SECTIONS------------------------  */
 
