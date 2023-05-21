@@ -36,6 +36,7 @@ ol {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -1008,6 +1009,13 @@ body {
   object-fit: cover;
 }
 
+picture > img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .list-portfolio .link:hover,
 .list-portfolio .link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -1259,6 +1267,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    row-gap: 72px;
   }
   .list-portfolio > .li-item {
     width: calc((100% - 24px) / 2);
@@ -1401,12 +1410,12 @@ body {
     padding-top: 100px;
     padding-bottom: 120px;
   }
-  .filter-list {
-    margin-bottom: 72px;
-  }
 
   .list-portfolio > .li-item {
     width: calc((100% - 48px) / 3);
+  }
+  .list-portfolio {
+    row-gap: 48px;
   }
 }
 /**-----------------------MOBILE_ROTATE */
