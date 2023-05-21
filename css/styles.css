@@ -93,7 +93,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: teal;
+  background-color: var(--white-color);
   overflow-y: scroll;
   z-index: 777;
   transform: translatex(100%);
@@ -258,16 +258,83 @@ body {
   height: 432px;
   margin-left: auto;
   margin-right: auto;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url('../images/hero-people-office.jpg');
+    url('../images/hero-people-office.jpg'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+@media screen and (max-width: 480px) {
+  .section.hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/hero/hero-mobile.jpg');
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section.hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url('../images/hero/hero-mobile-2x.jpg');
+    }
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .section.hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/hero/hero-tablet.jpg');
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section.hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url('../images/hero/hero-tablet-2x.jpg');
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  .section.hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url('../images/hero/hero-desktop.jpg');
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .section.hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url('../images/hero/hero-desktop-2x.jpg');
+    }
+  }
+}
 .hero-title {
   color: var(--white-color);
   font-size: 36px;
@@ -1340,5 +1407,25 @@ body {
 
   .list-portfolio > .li-item {
     width: calc((100% - 48px) / 3);
+  }
+}
+/**-----------------------MOBILE_ROTATE */
+@media screen and (max-height: 485px) {
+  .mobile-menu .nav .list {
+    gap: 10px;
+  }
+  .mobile-menu {
+    padding-top: 24px;
+  }
+  .mobile-menu .address .list {
+    gap: 10px;
+  }
+  .mobile-menu .address {
+    margin-bottom: 10px;
+  }
+  .menu-container .link.tel {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.11;
   }
 }
