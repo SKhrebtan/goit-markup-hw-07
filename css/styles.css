@@ -855,7 +855,7 @@ body {
 .modal-form-checkbox {
   display: flex;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .modal-checkbox-text {
@@ -1318,9 +1318,6 @@ picture > img {
     max-width: 1158px;
   }
 
-  .logo.link {
-    margin-right: 76px;
-  }
   .address .link {
     font-size: 16px;
     line-height: 1.5;
