@@ -269,7 +269,7 @@ body {
   background-size: cover;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 428px) {
   .section.hero {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
@@ -292,7 +292,7 @@ body {
   }
 }
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 429px) and (max-width: 768px) {
   .section.hero {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
