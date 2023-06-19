@@ -855,7 +855,7 @@ body {
 .modal-form-checkbox {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 .modal-checkbox-text {
