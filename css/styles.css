@@ -1190,6 +1190,7 @@ picture > img {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
+    row-gap: 72px;
   }
 
   .advantages .list > .li-item {
@@ -1316,6 +1317,10 @@ picture > img {
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
+  }
+
+  .logo.link {
+    margin-right: 76px;
   }
 
   .address .link {
